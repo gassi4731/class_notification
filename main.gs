@@ -1,5 +1,3 @@
-var classMessage = []; // 授業内容のお知らせ
-
 function mainFunction() {
   let pretext = createPretext();
   let fields = createFields();
