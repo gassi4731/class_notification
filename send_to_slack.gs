@@ -1,20 +1,28 @@
-var postUrl = ""; // SlackのPost先のURL
-var username = "授業お知らせBot"; // 通知時に表示されるユーザー名
-var icon = ":hatching_chick:"; // 通知時に表示されるアイコン
+var username = '授業お知らせBot';  // 通知時に表示されるユーザー名
+var icon = ':hatching_chick:';  // 通知時に表示されるアイコン
 
-function sendToSlack(classMessage) {
-	var jsonData = {
-		username: username,
-		icon_emoji: icon,
-		blocks: classMessage,
-	};
-	var payload = JSON.stringify(jsonData);
+function sendToSlack(pretext, fields) {
+  var jsonData =
+  {
+    "username" : username,
+    "icon_emoji": icon,
+    "attachments": [
+      {
+         "fallback": "今日の授業のお知らせ",
+         "pretext": pretext,
+         "color": "#2eb886",
+         "fields": fields
+      }
+   ]
+  };
+  var payload = JSON.stringify(jsonData);
 
-	var options = {
-		method: "post",
-		contentType: "application/json",
-		payload: payload,
-	};
+  var options =
+  {
+    "method" : "post",
+    "contentType" : "application/json",
+    "payload" : payload
+  };
 
-	UrlFetchApp.fetch(postUrl, options);
+  UrlFetchApp.fetch(PropertiesService.getScriptProperties().getProperty('SLACK_WEBHOOK_URL'), options);
 }
