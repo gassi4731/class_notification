@@ -10,7 +10,7 @@ function sendToSlack(pretext, fields) {
       {
          "fallback": "今日の授業のお知らせ",
          "pretext": pretext,
-         "color": "#2eb886",
+         "color": "#898989",
          "fields": fields
       }
    ]
