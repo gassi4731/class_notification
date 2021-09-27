@@ -27,6 +27,7 @@ var classTypeMessage = [
 	"Zoom（後日共有あり）",
 	"対面とZoomの併用（後日共有あり）",
 	"対面推奨（Zoomもあり/後日共有あり）",
+  "オンデマンド"
 ];
 
 function createTopMessage() {
