@@ -63,11 +63,11 @@ function createSection(period, name, classLink, type, zoomLink) {
 	message.text = {
 		type: "mrkdwn",
 		text:
-			numberString[period - 1] +
+			numberString[period] +
 			" *" +
 			name +
 			"*\n開始時刻: " +
-			startTimeString[period - 1] +
+			startTimeString[period] +
 			" | 授業サイトは<" +
 			classLink +
 			"|こちら> | 今日は" +
